@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml">
+	<ui:define name="titulo">Pesquisa de produtos</ui:define>
+	<ui:define name="corpo">
+		<h:form>
+			<h1>Pesquisa de pedidos</h1>
+			<br></br>
+			<p:toolbar>
+				<p:toolbarGroup align="right">
+					<p:button value="Novo" outcome="/pedidos/CadastroPedido" />
+				</p:toolbarGroup>
+				<p:toolbarGroup>
+					<p:button value="Pesquisar" outcome="/produtos/PesquisaProdutos" />
+				</p:toolbarGroup>
+			</p:toolbar>
+			<p:panel id="painel">
+				<p:panelGrid columns="2" style="width:100%;" id="grid">
+					<p:outputLabel for="numero" value="Número" />
+				<h:panelGroup>
+					<p:inputText id="numero" />
+					<p:outputLabel value=" a " />
+					<p:inputText />
+				</h:panelGroup>
+
+					<p:outputLabel for="dataCriacao" value="Data da criação" />
+					<h:panelGroup>
+					<p:calendar id="dataCriacao" />
+					<h:outputLabel value=" a " for="aDtCriacao" />
+					<p:calendar id="aDtCriacao" />
+					</h:panelGroup>
+
+					<p:outputLabel for="vendedor" value="Vendedor" />
+					<p:inputText id="vendedor" size="44" />
+					<p:outputLabel for="cliente" value="Cliente" />
+					<p:inputText id="cliente" size="44" />
+
+					<p:outputLabel for="status" value="Status" />
+					<p:selectManyCheckbox id="status">
+						<f:selectItem itemLabel="Orçamento" itemValue="false"/>
+						<f:selectItem itemLabel="Emitido" itemValue="false"/>
+						<f:selectItem itemLabel="Cancelado" itemValue="false"/>
+					</p:selectManyCheckbox>
+				</p:panelGrid>
+				<br/>
+				<p:dataTable style="width:100%" id="tbPedidos" value="#{pesquisaPedidosBean.produtos}"
+				 var="itemP" emptyMessage="Nada para mostrar" paginator="true" paginatorAlwaysVisible="false"
+				 paginatorPosition="bottom" rows="10">
+					<p:column headerText="Número" width="70">
+						<p:outputLabel value="1230"/>
+					</p:column>
+					<p:column headerText="Vendedor">
+						<p:outputLabel value="José Junior"/>
+					</p:column>
+				
+					<p:column headerText="Data de criação">
+						<p:outputLabel value="13/12/1988"/>
+					</p:column>
+					<p:column headerText="Valor total">
+						<p:outputLabel value="R$ 1.230,44"/>
+					</p:column>
+					
+					<p:column headerText="Status" width="40">
+						<p:outputLabel value="emitido"/>
+					</p:column>
+					<p:column width="35">
+						<p:button icon="ui-icon-pencil" title="Editar"/>
+					</p:column>
+				</p:dataTable>
+			
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition>
+
+<p:panelGrid columns="4" style="width:100%">
+	<p:outputLabel value="Data de entrega" for="dataEntrega"/>
+	<p:calendar id="dataEntrega" size="10" pattern="dd/MM/yyyy">
+	</p:calendar>
+	<p:spacer/>
+	<p:spacer/>
+	
+	<p:outputLabel value="Logradouro" />
+	<p:inputText />
+	<p:outputLabel value="Número"/>
+	<p:inputText/>
+	
+	<p:outputLabel value="Complemento"/>
+	<p:inputText/>
+	
+	<p:outputLabel value="Cidade"/>
+	<p:inputText/>
+		
+	<p:outputLabel value="Estado"/>
+	<p:inputText/>
+	
+	<p:outputLabel value="Cep"/>
+	<p:inputText/>
+</p:panelGrid>
+
+</ui:composition>
+</html>
+
+

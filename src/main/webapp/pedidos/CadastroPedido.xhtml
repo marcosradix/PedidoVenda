@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+	
+	<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml">
+		<ui:define name="titulo">Novo pedido</ui:define>
+		<p:messages autoUpdate="true"/>
+		
+	<ui:define name="corpo">
+	
+	<h1>Novo pedido</h1>
+	
+	<ui:include src="/WEB-INF/template/pedido/BotoesPedidos.xhtml"/>
+	
+	
+	<ui:include src="/WEB-INF/template/pedido/CapaPedidos.xhtml"/>
+
+	<p:tabView style="width:100%; margin-top:20px;" effect="drop">
+
+<p:tab title="Itens">
+	<ui:include src="/WEB-INF/template/pedido/ItensPedidos.xhtml" />
+</p:tab>
+
+<p:tab title="Dados de entrega">
+	<ui:include src="/WEB-INF/template/pedido/DadosEntregaPedido.xhtml"/>
+</p:tab>
+
+<p:tab title="Observações">
+	<ui:include src="/WEB-INF/template/pedido/ObservacaoPedido.xhtml"/>
+</p:tab>
+
+</p:tabView>
+</ui:define>
+</ui:composition>
+</html>

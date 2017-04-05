@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<title>Página de login</title>
+<h:outputStylesheet library="css" name="sistema.css"/>
+</h:head>
+<h:body>
+
+<div class="header">
+<h:link>
+<h:graphicImage value="/resources/imagens/kaizen.png"/>
+</h:link>
+</div>
+
+<div id="login-dialog">
+<h1>Login</h1>
+<h:form>
+<h:panelGrid columns="2" styleClass="grid-login">
+<p:outputLabel value="E-mail"/>
+<p:inputText size="27"/>
+<p:outputLabel value="Senha"/>
+<p:password size="27"/>
+<h:panelGroup/>
+<p:commandButton value="Entrar"/>
+</h:panelGrid>
+
+
+</h:form>
+</div>
+<center>
+<div id="footer" style="margin-top:20%; padding: 0px 8px;">
+<hr />
+<a  href="http://www.google.com.br">2017@Curso sistemas comerciais com java ee cdi jpa</a>
+</div>
+</center>
+</h:body>
+
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition>
+	<p:panelGrid columns="4" style="margin-top:20px; width:100%" id="gridCapaPedidos">
+		<p:outputLabel value="Número"/>
+		<p:inputText value="12345"/>
+		<p:outputLabel value="Data de criação"/>
+		<p:calendar pattern="dd/MM/yyyy" locale="pt_BR"></p:calendar>
+		<p:outputLabel value="Status"/>
+		<p:inputText value="Orçamento"/>
+		<p:outputLabel value="Vendedor"/>
+		<p:selectOneMenu style="width:150px;">
+			<f:selectItem itemLabel="Selecione"/>
+		</p:selectOneMenu>
+		<p:outputLabel value="Cliente"/>
+		<p:selectOneMenu style="width:150px;">
+			<f:selectItem itemLabel="Selecione"/>
+		</p:selectOneMenu>
+		<p:outputLabel value="Forma de pagamento"/>
+		<p:selectOneMenu style="width:150px;">
+			<f:selectItem itemLabel="Selecione"/>
+		</p:selectOneMenu>
+		<p:outputLabel value="Valor do frete"/>
+		<p:inputText required="true"/>
+		<p:outputLabel value="Subtotal"/>
+		<p:inputText value="R$ 0,00"/>
+		<p:outputLabel value="Valor de desconto"/>
+		<p:inputText value="R$ 0,00"/>
+		<p:outputLabel value="Total do pedito" style="font-weight:bold"/>
+		<p:inputText value="R$ 0,00"/>
+	</p:panelGrid>
+	</ui:composition>	
+</html>

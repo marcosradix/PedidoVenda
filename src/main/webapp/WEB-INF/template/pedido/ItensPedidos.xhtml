@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition>
+		<p:tab title="Itens">
+			<p:dataTable value="#{cadastroPedidosBean.produtos}" emptyMessage="Não há nada para mostrar">
+				<p:column headerText="SKU" width="70">
+					<p:inputText size="5"/>
+				</p:column>
+
+				<p:column headerText="Produto">
+					<p:autoComplete size="80"/>
+				</p:column>
+
+				<p:column headerText="Valor unitário" width="180">
+					<p:inputText value="R$ 0,00"/>
+				</p:column>
+
+				<p:column headerText="Quantidade" width="80">
+					<p:inputText value="1" size="8"/>
+				</p:column>
+
+				<p:column headerText="Estoqe" width="80">
+				<p:inputText value="0" size="8"/>
+				</p:column>
+
+				<p:column headerText="Valor total" width="90" style="text-align:right">
+					<p:outputLabel value="R$ 0,00" />
+				</p:column>
+				
+				<p:columnGroup type="footer">
+					<p:row>
+						<p:column colspan="5" footerText="Subtotal" style="text-align:right"></p:column>
+						 <p:column footerText="R$ 0,00" style="text-align:right"></p:column>
+					</p:row>
+				</p:columnGroup>
+				
+			</p:dataTable>
+		</p:tab>
+</ui:composition>
+</html>
+
+

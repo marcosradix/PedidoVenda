@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml">
+	<ui:define name="titulo">Pesquisa de produtos</ui:define>
+	<ui:define name="corpo">
+	<h:form id="frm">
+		<h1>Pesquisar produtos</h1>
+		<p:toolbar>
+			<p:toolbarGroup align="right">
+				<p:button value="Novo" outcome="/produtos/CadastroProduto" />
+			</p:toolbarGroup>
+
+			<p:toolbarGroup>
+				<p:commandButton value="Pesquisar" />
+			</p:toolbarGroup>
+		</p:toolbar>
+		<br />
+		<center>
+			<p:panelGrid columns="2">
+				<p:outputLabel value="SKU : " />
+				<p:inputText />
+				<p:outputLabel value="Nome : " />
+				<p:inputText size="50" />
+			</p:panelGrid>
+		</center>
+		<br></br>
+		<p:dataTable value="#{pesquisaProdutoBean.produtos}" var="item"
+			paginator="true" paginatorAlwaysVisible="false"
+			paginatorPosition="bottom" rows="10" style="text-align:center" id="tb">
+			<p:column headerText="SKU">
+				<p:outputLabel value="123" />
+			</p:column>
+
+			<p:column headerText="Nome">
+				<p:outputLabel value="Bala de morango" />
+			</p:column>
+
+			<p:column headerText="Categoria">
+				<p:outputLabel value="Doces -balas e chicletes" />
+			</p:column>
+
+			<p:column headerText="Valor unitário">
+				<p:outputLabel value="R$ 1,20" />
+			</p:column>
+
+			<p:column headerText="Estoque">
+				<p:outputLabel value="98" />
+			</p:column>
+
+			<p:column width="70">
+				<h:panelGroup />
+				<p:button icon="ui-icon-pencil"/>
+				<p:commandButton icon="ui-icon-trash" title="Excluir"
+				 oncomplete="PF('confirmacaoExclusao').show()"/>
+			</p:column>
+		</p:dataTable>
+	
+	<p:confirmDialog id="confirmacaoExclusao" widgetVar="confirmacaoExclusao" header="Exclusão de produtos!"
+	 message="Tem certeza de excluir o produto ?" hideEffect="drop">
+		<p:button value="Não" onclick="PF('confirmacaoExclusao').hide(); return false;"/>
+		<p:commandButton  value="Sim" oncomplete="PF('confirmacaoExclusao').hide()" update="@this"/>
+	</p:confirmDialog>
+	</h:form>
+	</ui:define>
+</ui:composition>
+</html>

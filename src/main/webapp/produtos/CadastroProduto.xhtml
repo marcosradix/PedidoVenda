@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+	<h:outputStylesheet library="css" name="sistema.css"/>
+	<h:outputScript library="js" name="jquery.maskMoney.js"/>
+	<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml">
+	<ui:define name="titulo">Novo produto</ui:define>
+	<ui:define name="corpo">
+	<h:form id="frm">
+	<h1>Novo produto</h1>
+	<br></br>
+	<p:toolbar>
+	<p:toolbarGroup>
+	<p:button value="Novo" outcome="/produtos/CadastroProduto"/>
+	<p:commandButton value="Salvar" id="btnSalvar" update="frm"/>
+	</p:toolbarGroup>
+	<p:toolbarGroup align="right">
+	<p:button value="Pesquisar" outcome="/produtos/PesquisaProdutos"/>
+	</p:toolbarGroup>	
+	</p:toolbar>
+	<p:panel id="painel">
+	<p:panelGrid columns="2" style="width:100%;" id="grid" columnClasses="rotulo, campo">
+	<p:outputLabel for="sku" value="SKU"/>
+	<p:inputText id="sku" size="10"/>
+	
+	<p:outputLabel for="nome"  value="Nome"/>
+	<p:inputText id="nome" size="50" />
+	
+	<p:outputLabel for="categoria" value="Categoria"/>
+	<p:selectOneMenu id="categoria" style="width:180px;">
+	<f:selectItem itemLabel="Selecione a categoria"/>
+	</p:selectOneMenu>
+	
+	<p:outputLabel for="subCategoria" value="Subcategoria"/>
+	<p:selectOneMenu style="width:180px;" id="subCategoria">
+		<f:selectItem itemLabel="Selecione a subcategoria"/>
+	</p:selectOneMenu>
+	
+	<p:outputLabel for="valorUni" value="Valor unitário"/>
+	<p:inputText id="valorUni" size="12"  styleClass="moeda" style="width:180px;"/>
+	
+	<p:outputLabel for="estoque" value="Estoque" />
+	<p:inputText id="estoque" style="width:180px;"/>
+	</p:panelGrid>
+	</p:panel>
+	</h:form>
+	</ui:define>
+	</ui:composition>
+</html>
